@@ -1,0 +1,16 @@
+{
+  "quotes": [
+    {
+      "quote": "Replace this with a real quote from a review or press write-up.",
+      "cite": "Publication Name"
+    },
+    {
+      "quote": "Another quote or blurb. Add or remove quotes in the Admin.",
+      "cite": "Another Outlet"
+    }
+  ],
+  "links": [
+    { "label": "Interview / Feature Link", "url": "https://example.com" },
+    { "label": "Review Link", "url": "https://example.com" }
+  ]
+}

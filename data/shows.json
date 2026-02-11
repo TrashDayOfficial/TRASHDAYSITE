@@ -1,0 +1,28 @@
+{
+  "shows": [
+    {
+      "date": "2025-03-15",
+      "dateDisplay": "MAR 15",
+      "venue": "Venue Name",
+      "city": "City, State",
+      "notes": "Supporting / Headline — Doors 8pm",
+      "ticketUrl": "https://example.com/tickets"
+    },
+    {
+      "date": "2025-04-02",
+      "dateDisplay": "APR 02",
+      "venue": "Another Venue",
+      "city": "City, State",
+      "notes": "With Other Bands — 9pm",
+      "ticketUrl": "https://example.com/tickets"
+    },
+    {
+      "date": "",
+      "dateDisplay": "TBA",
+      "venue": "More dates coming soon",
+      "city": "—",
+      "notes": "",
+      "ticketUrl": ""
+    }
+  ]
+}

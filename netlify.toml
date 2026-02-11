@@ -1,0 +1,6 @@
+# TRASH DAY — Netlify config (static site, no framework)
+# Build only writes deploy-log.txt for debugging; publish is the repo as-is.
+[build]
+  command = "sh scripts/build.sh"
+  publish = "."
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- ."

@@ -1,0 +1,80 @@
+# TRASH DAY — CMS config. Works when site is deployed on Netlify (enable Identity + Git Gateway in Netlify).
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+site_url: https://trashdayofficial.github.io/TRASHDAYSITE/
+display_url: https://trashdayofficial.github.io/TRASHDAYSITE
+
+collections:
+  - name: site
+    label: Site
+    files:
+      - name: site
+        label: Site settings
+        file: data/site.json
+        format: json
+        fields:
+          - { label: Tagline, name: tagline, widget: string, hint: "Line under the band name on the homepage" }
+
+  - name: shows
+    label: Shows
+    files:
+      - name: shows
+        label: Shows
+        file: data/shows.json
+        format: json
+        fields:
+          - name: shows
+            label: Shows
+            widget: list
+            summary: "{{fields.venue}} — {{fields.dateDisplay}}"
+            fields:
+              - { label: "Date (YYYY-MM-DD, or leave empty for TBA)", name: date, widget: string, required: false }
+              - { label: "Date display (e.g. MAR 15 or TBA)", name: dateDisplay, widget: string }
+              - { label: Venue, name: venue, widget: string }
+              - { label: "City, State", name: city, widget: string }
+              - { label: Notes, name: notes, widget: string, required: false }
+              - { label: "Ticket URL", name: ticketUrl, widget: string, required: false }
+
+  - name: listen
+    label: Listen
+    files:
+      - name: listen
+        label: Listen links
+        file: data/listen.json
+        format: json
+        fields:
+          - name: links
+            label: Streaming links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+
+  - name: press
+    label: Press
+    files:
+      - name: press
+        label: Press
+        file: data/press.json
+        format: json
+        fields:
+          - name: quotes
+            label: Press quotes
+            widget: list
+            summary: "{{fields.cite}}"
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Citation (e.g. Publication Name), name: cite, widget: string }
+          - name: links
+            label: Press links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }

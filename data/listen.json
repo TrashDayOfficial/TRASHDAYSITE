@@ -1,0 +1,8 @@
+{
+  "links": [
+    { "label": "Spotify", "url": "https://open.spotify.com" },
+    { "label": "Apple Music", "url": "https://music.apple.com" },
+    { "label": "Bandcamp", "url": "https://bandcamp.com" },
+    { "label": "YouTube", "url": "https://youtube.com" }
+  ]
+}
