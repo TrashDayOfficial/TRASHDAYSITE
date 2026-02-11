@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function () {
   'use strict';
 
@@ -154,3 +155,14 @@
     });
   });
 })();
+=======
+// Optional: smooth scroll and any future interactivity
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+>>>>>>> b11f6abbf7cdcebfbbeeec43bfba55cb27ef4416
