@@ -1,28 +1,17 @@
 {
   "shows": [
     {
-      "date": "2025-03-15",
-      "dateDisplay": "MAR 15",
-      "venue": "Venue Name",
-      "city": "City, State",
-      "notes": "Supporting / Headline — Doors 8pm",
-      "ticketUrl": "https://example.com/tickets"
-    },
-    {
-      "date": "2025-04-02",
-      "dateDisplay": "APR 02",
-      "venue": "Another Venue",
-      "city": "City, State",
-      "notes": "With Other Bands — 9pm",
-      "ticketUrl": "https://example.com/tickets"
+      "dateDisplay": "FEB 19",
+      "venue": "El Cid",
+      "city": "Los Angeles",
+      "ticketUrl": "https://dice.fm/event/bbxgnk-sluttony-trash-day-kit-major-19th-feb-el-cid-los-angeles-tickets?pid=ea4efc8e&_branch_match_id=1487500589240110206&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1U83TjIxSDW0SDZKS7UvyEyxTU00SU1LtkhVqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUARcMKrUgAAAA%3D"
     },
     {
       "date": "",
-      "dateDisplay": "TBA",
-      "venue": "More dates coming soon",
-      "city": "—",
-      "notes": "",
-      "ticketUrl": ""
+      "dateDisplay": "FEB 28",
+      "venue": "Harvard & Stone",
+      "city": "Los Angeles",
+      "ticketUrl": "https://www.bandsintown.com/t/107741255?ticket_id=2017001344&app_id=spt_feed&came_from=281&utm_medium=web&utm_source=spt_feed&utm_campaign=ticket"
     }
   ]
 }
