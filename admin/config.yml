@@ -19,6 +19,70 @@ collections:
         format: json
         fields:
           - { label: Tagline, name: tagline, widget: string, hint: "Line under the band name on the homepage" }
+          - { label: "Hero background image", name: heroImage, widget: image, required: false, hint: "Optional full-width image behind the band name" }
+          - { label: "Logo image", name: logoImage, widget: image, required: false, hint: "Replaces text logo in header if set" }
+          - { label: "Background light", name: bgLight, widget: color, default: "#E5CDC8" }
+          - { label: "Background dark", name: bgDark, widget: color, default: "#3A3335" }
+          - { label: "Accent primary (buttons, key highlights)", name: accentPrimary, widget: color, default: "#FFE74C" }
+          - { label: "Accent secondary", name: accentSecondary, widget: color, default: "#E73964" }
+          - { label: "Accent tertiary", name: accentTertiary, widget: color, default: "#EE4921" }
+          - { label: "Text on light background", name: textOnLight, widget: color, default: "#3A3335" }
+          - { label: "Text on dark background", name: textOnDark, widget: color, default: "#E5CDC8" }
+          - { label: "Muted text on light", name: textMutedLight, widget: color, default: "#5a5355" }
+          - { label: "Muted text on dark", name: textMutedDark, widget: color, default: "#c4b5b2" }
+          - label: "Heading font"
+            name: fontHeading
+            widget: select
+            default: "Bebas Neue"
+            options:
+              - { label: Bebas Neue, value: "Bebas Neue" }
+              - { label: Oswald, value: "Oswald" }
+              - { label: "Archivo Black", value: "Archivo Black" }
+              - { label: "Montserrat", value: "Montserrat" }
+              - { label: "Playfair Display", value: "Playfair Display" }
+          - label: "Body font"
+            name: fontBody
+            widget: select
+            default: "Space Mono"
+            options:
+              - { label: "Space Mono", value: "Space Mono" }
+              - { label: "IBM Plex Mono", value: "IBM Plex Mono" }
+              - { label: "Open Sans", value: "Open Sans" }
+              - { label: "Lato", value: "Lato" }
+              - { label: "Source Sans Pro", value: "Source Sans Pro" }
+          - label: "Hero text alignment"
+            name: heroAlign
+            widget: select
+            default: center
+            options:
+              - { label: Left, value: left }
+              - { label: Center, value: center }
+              - { label: Right, value: right }
+          - label: "Section spacing"
+            name: sectionSpacing
+            widget: select
+            default: normal
+            options:
+              - { label: Compact, value: compact }
+              - { label: Normal, value: normal }
+              - { label: Spacious, value: spacious }
+          - label: "Border radius"
+            name: borderRadius
+            widget: select
+            default: medium
+            options:
+              - { label: None, value: none }
+              - { label: Small, value: small }
+              - { label: Medium, value: medium }
+              - { label: Large, value: large }
+          - label: "Button style"
+            name: buttonStyle
+            widget: select
+            default: solid
+            options:
+              - { label: Solid, value: solid }
+              - { label: Outline, value: outline }
+              - { label: "Ghost (text only)", value: ghost }
 
   - name: shows
     label: Shows

@@ -1,3 +1,20 @@
 {
-  "tagline": "Its all garbage, live it up"
+  "tagline": "Its all garbage, live it up",
+  "heroImage": "",
+  "logoImage": "",
+  "bgLight": "#E5CDC8",
+  "bgDark": "#3A3335",
+  "accentPrimary": "#FFE74C",
+  "accentSecondary": "#E73964",
+  "accentTertiary": "#EE4921",
+  "textOnLight": "#3A3335",
+  "textOnDark": "#E5CDC8",
+  "textMutedLight": "#5a5355",
+  "textMutedDark": "#c4b5b2",
+  "fontHeading": "Bebas Neue",
+  "fontBody": "Space Mono",
+  "heroAlign": "center",
+  "sectionSpacing": "normal",
+  "borderRadius": "medium",
+  "buttonStyle": "solid"
 }

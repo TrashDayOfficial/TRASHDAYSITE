@@ -18,6 +18,56 @@
     if (el && data && data.tagline) el.textContent = data.tagline;
   }
 
+  function applyTheme(data) {
+    if (!data) return;
+    var vars = [];
+    if (data.bgLight) vars.push('  --bg-light:' + data.bgLight);
+    if (data.bgDark) vars.push('  --bg-dark:' + data.bgDark);
+    if (data.accentPrimary) vars.push('  --accent-primary:' + data.accentPrimary);
+    if (data.accentSecondary) vars.push('  --accent-secondary:' + data.accentSecondary);
+    if (data.accentTertiary) vars.push('  --accent-tertiary:' + data.accentTertiary);
+    if (data.textOnLight) vars.push('  --text-on-light:' + data.textOnLight);
+    if (data.textOnDark) vars.push('  --text-on-dark:' + data.textOnDark);
+    if (data.textMutedLight) vars.push('  --text-muted-light:' + data.textMutedLight);
+    if (data.textMutedDark) vars.push('  --text-muted-dark:' + data.textMutedDark);
+    if (data.fontHeading) vars.push('  --font-heading:"' + data.fontHeading + '",sans-serif');
+    if (data.fontBody) vars.push('  --font-body:"' + data.fontBody + '",sans-serif');
+    var alignMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
+    if (data.heroAlign) {
+      vars.push('  --hero-align:' + (alignMap[data.heroAlign] || data.heroAlign));
+      vars.push('  --hero-text-align:' + data.heroAlign);
+    }
+    if (data.sectionSpacing === 'compact') vars.push('  --section-padding:2rem');
+    else if (data.sectionSpacing === 'spacious') vars.push('  --section-padding:6rem');
+    if (data.borderRadius === 'none') vars.push('  --radius:0');
+    else if (data.borderRadius === 'small') vars.push('  --radius:2px');
+    else if (data.borderRadius === 'large') vars.push('  --radius:12px');
+    if (vars.length) {
+      var style = document.getElementById('theme-vars') || (function () {
+        var s = document.createElement('style');
+        s.id = 'theme-vars';
+        document.head.appendChild(s);
+        return s;
+      })();
+      style.textContent = ':root{' + vars.join(';') + '}';
+    }
+    document.body.classList.add('button-' + (data.buttonStyle || 'solid'));
+    if (data.sectionSpacing && data.sectionSpacing !== 'normal') document.body.classList.add('spacing-' + data.sectionSpacing);
+    if (data.borderRadius && data.borderRadius !== 'medium') document.body.classList.add('radius-' + data.borderRadius);
+    var heroBg = document.querySelector('.js-hero-bg');
+    if (heroBg && data.heroImage) {
+      var imgPath = String(data.heroImage);
+      if (imgPath && !/^(\/|https?:)/.test(imgPath)) imgPath = '/' + imgPath;
+      heroBg.style.backgroundImage = 'url(' + imgPath + ')';
+    }
+    var logo = document.querySelector('.logo');
+    if (logo && data.logoImage) {
+      var logoPath = String(data.logoImage);
+      if (logoPath && !/^(\/|https?:)/.test(logoPath)) logoPath = '/' + logoPath;
+      logo.innerHTML = '<img src="' + escapeAttr(logoPath) + '" alt="TRASH DAY">';
+    }
+  }
+
   function renderShows(data) {
     var container = document.querySelector('.js-shows-list');
     if (!container) return;
@@ -138,7 +188,10 @@
     if (el) el.innerHTML = '<p class="loading">' + (message || 'Could not load.') + '</p>';
   }
 
-  fetchJSON(siteUrl).then(renderTagline).catch(function () { showLoadError('.js-tagline', '—'); });
+  fetchJSON(siteUrl).then(function (data) {
+    applyTheme(data);
+    renderTagline(data);
+  }).catch(function () { showLoadError('.js-tagline', '—'); });
   fetchJSON(showsUrl).then(renderShows).catch(function () { showLoadError('.js-shows-list', 'No shows right now.'); });
   fetchJSON(listenUrl).then(renderListen).catch(function () { showLoadError('.js-listen-grid', 'No links yet.'); });
   fetchJSON(pressUrl).then(renderPress).catch(function () { showLoadError('.js-press-list', 'No press yet.'); });
