@@ -1,8 +1,20 @@
 {
   "links": [
-    { "label": "Spotify", "url": "https://open.spotify.com" },
-    { "label": "Apple Music", "url": "https://music.apple.com" },
-    { "label": "Bandcamp", "url": "https://bandcamp.com" },
-    { "label": "YouTube", "url": "https://youtube.com" }
+    {
+      "label": "Spotify",
+      "url": "https://open.spotify.com/artist/7atgGb1JGbFC3OGbuQDYiF?si=ZEkvqGJxQNmU6zKHVLR2KQ"
+    },
+    {
+      "label": "Apple Music",
+      "url": "https://music.apple.com/us/artist/trash-day/1651771315"
+    },
+    {
+      "label": "Bandcamp",
+      "url": "https://trashdayofficial.bandcamp.com/track/vacation"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@trashday_"
+    }
   ]
 }
